@@ -1,11 +1,14 @@
 package com.spring.mvc.model;
 
 /**
+ * Person Model
+ * 
  * @author 	Lian
- * @date	2016年1月13日 下午12:03:08
- * @desc	Person实体类
+ * @date	2016年5月17日
+ * @since	1.0
  */
 public class Person {
+
 	private String name;
 	private int age;
 

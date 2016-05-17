@@ -10,7 +10,7 @@
 	xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context">
 
-	<context:component-scan base-package="com.springmvc.notes.integrate">
+	<context:component-scan base-package="com.spring.mvc.integrate">
 		<!-- 不扫描@Controller和@ControllerAdvice注解-->
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />

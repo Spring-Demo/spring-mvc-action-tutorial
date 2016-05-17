@@ -2,19 +2,19 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context 
-        http://www.springframework.org/schema/context/spring-context-4.1.xsd
-        http://www.springframework.org/schema/mvc 
-        http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 
 	<!-- scan the package and the sub package -->
 	<!-- 配置了这个标签后, spring可以自动去扫描base-package下面或者子包下面的java文件, 如果扫描到有@Component,@Controller, @Service等这些注解的类, 则把这些类注册为bean -->
-	<context:component-scan base-package="com.springmvc.notes" />
+	<context:component-scan base-package="com.spring.mvc" />
 
 	<!-- 防止SpringMVC和SpringIOC对同一个对象的管理重合 -->
-	<context:component-scan base-package="com.springmvc.notes.integrate">
+	<context:component-scan base-package="com.spring.mvc.integrate">
 		<!-- 扫描@Controller和@ControllerAdvice注解 -->
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 		<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
@@ -37,7 +37,7 @@
 		<property name="maxUploadSize" value="102400000" />
 	</bean>
 
-	<!-- configure SimpleMappingExceptionResolver -->
+	<!-- Method3: configure SimpleMappingExceptionResolver -->
 	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<property name="exceptionMappings">
 			<props>
@@ -50,12 +50,12 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/mvc/**" />
-			<bean class="com.springmvc.notes.interceptor.MyInterceptor" />
+			<bean class="com.spring.mvc.interceptor.MyInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
 
 	<!-- configure the local resource -->
-	<bean id="messageREsource" class="org.springframework.context.support.ResourceBundleMessage">
+	<bean id="messageREsource" class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="local" />
 	</bean>
 </beans>

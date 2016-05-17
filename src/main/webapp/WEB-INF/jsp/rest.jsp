@@ -4,30 +4,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Rest Page</title>
 </head>
 <body>
-	<h1>Hello World!</h1>
-	<form action="../mvc/upload" method="post" enctype="multipart/form-date">
-		<input type="file" name="file" /><br>
-		<input type="submit" value="submit" />
-	</form>
+	<h1>Rest Page</h1>
 
-
-	<form action="rest/user/1" method="post">
+	<form action="../../rest/user/1" method="post">
 		<input type="hidden" name="_method" value="PUT"> 
 		<input type="submit" value="put">
 	</form>
 
-	<form action="rest/user/1" method="post">
+	<form action="../../rest/user/1" method="post">
 		<input type="submit" value="post">
 	</form>
 
-	<form action="rest/user/1" method="get">
+	<form action="../../rest/user/1" method="get">
 		<input type="submit" value="get">
 	</form>
 
-	<form action="rest/user/1" method="post">
+	<form action="../../rest/user/1" method="post">
 		<input type="hidden" name="_method" value="DELETE"> 
 		<input type="submit" value="delete">
 	</form>

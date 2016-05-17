@@ -7,8 +7,8 @@
 <title>upload</title>
 </head>
 <body>
-	<form action="mvc/upload" method="post" enctype="multipart/form-date">
-		<input type="fiel" name="file" /><br>
+	<form action="../upload" method="post" enctype="multipart/form-data">
+		<input type="file" name="file" /><br>
 		<input type="submit" value="submit" />
 	</form>
 </body>

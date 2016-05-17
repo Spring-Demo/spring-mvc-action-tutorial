@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.spring.mvc.integrate.User;
 
 /**
+ * 控制器: 返回json格式的字符串
+ * 
  * @author 	Lian
- * @date	2016年1月13日 上午11:37:36
- * @desc	控制器: 返回json格式的字符串
+ * @date	2016年5月17日
+ * @since	1.0
  */
 @Controller
 @RequestMapping("/json")

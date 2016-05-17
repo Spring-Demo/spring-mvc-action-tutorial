@@ -5,22 +5,21 @@
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
 
-	<!-- Configure the setting of SpringMVC DispatcherServlet and configure the mapping -->
-	<servlet>
-		<servlet-name>springmvc</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<init-param>
-			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:springmvc-servlet.xml</param-value>
-		</init-param>
-		<!-- <load-on-startup>1</load-on-startup> -->
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>springmvc</servlet-name>
-		<url-pattern>/</url-pattern>
-	</servlet-mapping>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext.xml</param-value>
+	</context-param>
 
-	<!-- configure the HiddenHttpMethodFilter, convert the post method to put or delete -->
+	<!-- Configure the SpringIOC -->
+	<!-- Auto assemble configuration information of ApplicationContext. Cause 
+		it implements the ServletContextListener interface, when you start container, 
+		it will be the default exeution method implemented. -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Configure the HiddenHttpMethodFilter, convert the post method to put or delete -->
+	<!-- 配置: form表单发送put和delete请求 -->
 	<filter>
 		<filter-name>HiddenHttpMethodFilter</filter-name>
 		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
@@ -30,12 +29,19 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
-	<!-- configure the SpringIOC -->
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-		<context-param>
+	<!-- Configure the setting of SpringMVC DispatcherServlet and configure the mapping -->
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:applicationContext.xml</param-value>
-		</context-param>
-	</listener>
+			<param-value>classpath:springmvc-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
 </web-app>
