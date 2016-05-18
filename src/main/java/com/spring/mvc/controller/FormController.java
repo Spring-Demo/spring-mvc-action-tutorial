@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.spring.mvc.integrate.User;
 
 /**
+ * 控制器: 表单的验证--使用Hibernate-validate
+ * 
  * @author 	Lian
- * @date	2016年1月13日 上午11:37:36
- * @desc	控制器: 表单的验证--使用Hibernate-validate
+ * @date	2016年5月18日
+ * @since	1.0
  */
 @Controller
 @RequestMapping("/form")

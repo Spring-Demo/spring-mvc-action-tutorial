@@ -3,9 +3,11 @@ package com.spring.mvc.integrate;
 import org.springframework.stereotype.Component;
 
 /**
+ * User Service
+ * 
  * @author 	Lian
- * @date	2016年1月13日 下午3:56:35
- * @desc	
+ * @date	2016年5月18日
+ * @since	1.0
  */
 @Component
 public class UserService {

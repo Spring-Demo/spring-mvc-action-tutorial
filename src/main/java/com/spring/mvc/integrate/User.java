@@ -8,11 +8,14 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**
+ * User Model
+ * 
  * @author 	Lian
- * @date	2016年1月13日 下午12:03:08
- * @desc	User实体类
+ * @date	2016年5月18日
+ * @since	1.0
  */
 public class User {
+
 	private int id;
 	@NotEmpty
 	private String name;

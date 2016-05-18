@@ -7,13 +7,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
+ * User Controller
+ * 
  * @author 	Lian
- * @date	2016年1月13日 下午3:57:47
- * @desc	
+ * @date	2016年5月18日
+ * @since	1.0
  */
 @Controller
 @RequestMapping("/integrate")
 public class UserController {
+
 	@Autowired
 	private UserService userService;
 
