@@ -54,3 +54,7 @@
 4. Controller调用业务逻辑处理后，返回ModelAndView
 5. DispatcherServlet查询一个或多个ViewResoler视图解析器，找到ModelAndView指定的视图
 6. 视图负责将结果显示到客户端
+
+## 关于jar包的问题
+* 本项目使用maven管理jar包，因此没有libjar包之类的
+* maven的基本使用并不难，希望大家可以抽出30分钟研究一下
